@@ -5,6 +5,7 @@ DPKG_EXPORT_BUILDFLAGS = 1
 include /usr/share/dpkg/default.mk
 
 export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
 
 TIME_VER=$(shell dpkg-parsechangelog --show-field Version | cut -d. -f 4 | cut -d- -f 1)
 
