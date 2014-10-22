@@ -6,10 +6,25 @@ include /usr/share/dpkg/default.mk
 
 export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 
+TIME_VER=$(shell dpkg-parsechangelog --show-field Version | cut -d. -f 4 | cut -d- -f 1)
+
+ORIG_TIME_VER=date \+\.%Y%m%d
+NEW_TIME_VER=echo .${TIME_VER}
+
 export V=1
 
 %:
 	dh $@ --with autoreconf
+
+override_dh_autoreconf:
+	# Upstream uses current timestamp as part of version string, so we need
+	# to change it to actual version string here.
+	perl -pi -e 's/${ORIG_TIME_VER}/${NEW_TIME_VER}/' configure.ac
+	dh_autoreconf
+
+override_dh_clean:
+	perl -pi -e 's/${NEW_TIME_VER}/${ORIG_TIME_VER}/' configure.ac
+	dh_clean
 
 override_dh_auto_configure:
 	./autogen.sh
