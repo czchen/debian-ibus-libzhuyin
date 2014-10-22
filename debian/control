@@ -15,7 +15,8 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends},
 Description: New Zhuyin engine based on libzhuyin for IBus
- <insert long description, indented with spaces>
+ ibus-libzhuyin is a Chinese Zhuyin (Bopomofo) input method based on
+ libzhuyin.
 
 Package: ibus-libzhuyin-dbg
 Section: debug
@@ -23,5 +24,8 @@ Priority: extra
 Architecture: any
 Depends: ${misc:Depends},
          ibus-libzhuyiin (= ${binary:Version}),
-Description: New Zhuyin engine based on libzhuyin for IBus
- <insert long description, indented with spaces>
+Description: Debug symbols for ibus-libzhuyin
+ ibus-libzhuyin is a Chinese Zhuyin (Bopomofo) input method based on
+ libzhuyin.
+ .
+ This package contains debug symbols for ibus-libzhuyin
