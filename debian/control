@@ -1,7 +1,8 @@
 Source: ibus-libzhuyin
 Section: utils
 Priority: optional
-Maintainer: ChangZhuo Chen (陳昌倬) <czchen@gmail.com>
+Maintainer: IME Packaging Team <pkg-ime-devel@lists.alioth.debian.org>
+Uploaders: ChangZhuo Chen (陳昌倬) <czchen@gmail.com>,
 Build-Depends: debhelper (>= 9),
                dh-autoreconf,
                intltool,
