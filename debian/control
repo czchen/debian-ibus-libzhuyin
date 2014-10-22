@@ -34,4 +34,4 @@ Description: Debug symbols for ibus-libzhuyin
  ibus-libzhuyin is a Chinese Zhuyin (Bopomofo) input method based on
  libzhuyin.
  .
- This package contains debug symbols for ibus-libzhuyin
+ This package contains debug symbols for ibus-libzhuyin.
