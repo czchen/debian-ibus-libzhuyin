@@ -17,3 +17,9 @@ override_dh_auto_configure:
 
 override_dh_strip:
 	dh_strip --dbg-package=ibus-libzhuyin-dbg
+
+override_dh_auto_install:
+	dh_auto_install
+	rm -f $(CURDIR)/debian/tmp/usr/share/doc/ibus-libzhuyin/COPYING
+	rm -f $(CURDIR)/debian/tmp/usr/share/doc/ibus-libzhuyin/INSTALL
+	rm -f $(CURDIR)/debian/tmp/usr/share/doc/ibus-libzhuyin/NEWS
