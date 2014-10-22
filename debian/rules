@@ -15,7 +15,7 @@ NEW_TIME_VER=echo .${TIME_VER}
 export V=1
 
 %:
-	dh $@ --with autoreconf
+	dh $@ --with autoreconf,python2
 
 override_dh_autoreconf:
 	# Upstream uses current timestamp as part of version string, so we need
@@ -39,11 +39,6 @@ override_dh_auto_install:
 	rm -f $(CURDIR)/debian/tmp/usr/share/doc/ibus-libzhuyin/INSTALL
 	rm -f $(CURDIR)/debian/tmp/usr/share/doc/ibus-libzhuyin/NEWS
 
-	# See Debian Python Policy section 2.6 (Modules Byte-Compilation)
-	rm -f $(CURDIR)/debian/tmp/usr/share/ibus-libzhuyin/setup/config.pyc
-	rm -f $(CURDIR)/debian/tmp/usr/share/ibus-libzhuyin/setup/config.pyo
-	rm -f $(CURDIR)/debian/tmp/usr/share/ibus-libzhuyin/setup/main.pyc
-	rm -f $(CURDIR)/debian/tmp/usr/share/ibus-libzhuyin/setup/main.pyo
 
 override_dh_install:
 	dh_install --fail-missing \
