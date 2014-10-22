@@ -23,7 +23,7 @@ Section: debug
 Priority: extra
 Architecture: any
 Depends: ${misc:Depends},
-         ibus-libzhuyiin (= ${binary:Version}),
+         ibus-libzhuyin (= ${binary:Version}),
 Description: Debug symbols for ibus-libzhuyin
  ibus-libzhuyin is a Chinese Zhuyin (Bopomofo) input method based on
  libzhuyin.
