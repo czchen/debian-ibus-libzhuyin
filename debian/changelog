@@ -1,0 +1,5 @@
+ibus-libzhuyin (1.6.99.20140929-1) unstable; urgency=low
+
+  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+
+ -- ChangZhuo Chen (陳昌倬) <czchen@gmail.com>  Wed, 22 Oct 2014 21:07:03 +0800
