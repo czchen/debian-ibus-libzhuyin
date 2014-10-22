@@ -7,8 +7,8 @@ Build-Depends: debhelper (>= 9),
                libopencc-dev,
 Standards-Version: 3.9.6
 Homepage: https://github.com/libzhuyin/ibus-libzhuyin
-#Vcs-Git: git://anonscm.debian.org/collab-maint/ibus-libzhuyin.git
-#Vcs-Browser: http://anonscm.debian.org/?p=collab-maint/ibus-libzhuyin.git;a=summary
+Vcs-Git: git://anonscm.debian.org/pkg-ime/ibus-libzhuyin.git
+Vcs-Browser: http://anonscm.debian.org/cgit/pkg-ime/ibus-libzhuyin.git
 
 Package: ibus-libzhuyin
 Architecture: any
