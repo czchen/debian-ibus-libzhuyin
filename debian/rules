@@ -22,6 +22,9 @@ override_dh_autoreconf:
 	perl -pi -e 's/${ORIG_TIME_VER}/${NEW_TIME_VER}/' configure.ac
 	dh_autoreconf
 
+override_dh_auto_configure:
+	dh_auto_configure -- --libexecdir=/usr/lib/ibus
+
 override_dh_clean:
 	perl -pi -e 's/${NEW_TIME_VER}/${ORIG_TIME_VER}/' configure.ac
 	dh_clean
