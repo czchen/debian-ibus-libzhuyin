@@ -13,6 +13,7 @@ export V=1
 
 override_dh_auto_configure:
 	./autogen.sh
+	dh_auto_configure
 
 override_dh_strip:
 	dh_strip --dbg-package=ibus-libzhuyin-dbg
