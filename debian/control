@@ -2,14 +2,26 @@ Source: ibus-libzhuyin
 Section: unknown
 Priority: optional
 Maintainer: ChangZhuo Chen (陳昌倬) <czchen@gmail.com>
-Build-Depends: debhelper (>= 9)
-Standards-Version: 3.9.5
-Homepage: <insert the upstream URL, if relevant>
+Build-Depends: debhelper (>= 9),
+               dh-autoreconf,
+               libopencc-dev,
+Standards-Version: 3.9.6
+Homepage: https://github.com/libzhuyin/ibus-libzhuyin
 #Vcs-Git: git://anonscm.debian.org/collab-maint/ibus-libzhuyin.git
 #Vcs-Browser: http://anonscm.debian.org/?p=collab-maint/ibus-libzhuyin.git;a=summary
 
 Package: ibus-libzhuyin
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+Description: New Zhuyin engine based on libzhuyin for IBus
+ <insert long description, indented with spaces>
+
+Package: ibus-libzhuyin-dbg
+Section: debug
+Priority: extra
+Architecture: any
+Depends: ${misc:Depends},
+         ibus-libzhuyiin (= ${binary:Version}),
+Description: New Zhuyin engine based on libzhuyin for IBus
  <insert long description, indented with spaces>
