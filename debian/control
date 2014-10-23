@@ -24,7 +24,8 @@ Depends: ${shlibs:Depends},
          ${python:Depends},
 Description: New Zhuyin engine based on libzhuyin for IBus
  ibus-libzhuyin is a Chinese Zhuyin (Bopomofo) input method based on
- libzhuyin.
+ libzhuyin. It provides an intelligent sentence-based Chinese zhuyin
+ algorithm to improve input experience.
 
 Package: ibus-libzhuyin-dbg
 Section: debug
@@ -34,6 +35,7 @@ Depends: ${misc:Depends},
          ibus-libzhuyin (= ${binary:Version}),
 Description: Debug symbols for ibus-libzhuyin
  ibus-libzhuyin is a Chinese Zhuyin (Bopomofo) input method based on
- libzhuyin.
+ libzhuyin. It provides an intelligent sentence-based Chinese zhuyin
+ algorithm to improve input experience.
  .
  This package contains debug symbols for ibus-libzhuyin.
