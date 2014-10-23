@@ -13,6 +13,7 @@ ORIG_TIME_VER=date \+\.%Y%m%d
 NEW_TIME_VER=echo .${TIME_VER}
 
 export V=1
+export NOCONFIGURE=yes # for ./autogen.sh
 
 %:
 	dh $@ --with autoreconf,python2
@@ -21,7 +22,7 @@ override_dh_autoreconf:
 	# Upstream uses current timestamp as part of version string, so we need
 	# to change it to actual version string here.
 	perl -pi -e 's/${ORIG_TIME_VER}/${NEW_TIME_VER}/' configure.ac
-	dh_autoreconf
+	dh_autoreconf $(CURDIR)/autogen.sh
 
 override_dh_auto_configure:
 	dh_auto_configure -- --libexecdir=/usr/lib/ibus
