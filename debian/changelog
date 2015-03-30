@@ -1,3 +1,9 @@
+ibus-libzhuyin (1.7.0-1) UNRELEASED; urgency=medium
+
+  * New upstream release
+
+ -- ChangZhuo Chen (陳昌倬) <czchen@gmail.com>  Mon, 30 Mar 2015 19:07:52 +0800
+
 ibus-libzhuyin (1.6.99.20140929-1) unstable; urgency=low
 
   * Initial release (Closes: #766358)
