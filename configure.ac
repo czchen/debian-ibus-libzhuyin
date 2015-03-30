@@ -19,10 +19,10 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 # if not 1, append datestamp to the version number.
-m4_define([ibus_released], [0])
+m4_define([ibus_released], [1])
 m4_define([ibus_major_version], [1])
-m4_define([ibus_minor_version], [6])
-m4_define([ibus_micro_version], [99])
+m4_define([ibus_minor_version], [7])
+m4_define([ibus_micro_version], [0])
 m4_define(ibus_maybe_datestamp,
     m4_esyscmd([if test x]ibus_released[ != x1; then date +.%Y%m%d | tr -d '\n\r'; fi]))
 
@@ -67,7 +67,7 @@ LIBZHUYIN_DATADIR=`$PKG_CONFIG --variable=pkgdatadir libzhuyin`
 AC_SUBST(LIBZHUYIN_DATADIR)
 
 # check opencc
-PKG_CHECK_MODULES(OPENCC, [opencc], [enable_opencc=yes])
+PKG_CHECK_MODULES(OPENCC, [opencc >= 1.0.0], [enable_opencc=yes])
 
 # check if ibus_config_get_values, which is available in ibus-1.3.99+ (git master)
 save_CFLAGS="$CFLAGS"
