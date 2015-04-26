@@ -5,12 +5,13 @@ Maintainer: IME Packaging Team <pkg-ime-devel@lists.alioth.debian.org>
 Uploaders: ChangZhuo Chen (陳昌倬) <czchen@gmail.com>,
 Build-Depends: debhelper (>= 9),
                dh-autoreconf,
+               dh-python,
                gnome-common,
                intltool,
                libglib2.0-dev,
-               libibus-1.0-dev,
-               libopencc-dev,
-               libzhuyin-dev,
+               libibus-1.0-dev (>= 1.4.0),
+               libopencc-dev (>= 1.0.0),
+               libzhuyin-dev (>= 1.0.0),
                python-all,
 Standards-Version: 3.9.6
 Homepage: https://github.com/libzhuyin/ibus-libzhuyin
