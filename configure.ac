@@ -22,7 +22,7 @@
 m4_define([ibus_released], [1])
 m4_define([ibus_major_version], [1])
 m4_define([ibus_minor_version], [7])
-m4_define([ibus_micro_version], [0])
+m4_define([ibus_micro_version], [1])
 m4_define(ibus_maybe_datestamp,
     m4_esyscmd([if test x]ibus_released[ != x1; then date +.%Y%m%d | tr -d '\n\r'; fi]))
 
@@ -59,7 +59,7 @@ PKG_CHECK_MODULES(IBUS, [
 
 # check libzhuyin
 PKG_CHECK_MODULES(LIBZHUYIN, [
-    libzhuyin >= 0.9.93
+    libzhuyin >= 1.0.0
 ], [enable_libzhuyin=yes])
 
 LIBZHUYIN_DATADIR=`$PKG_CONFIG --variable=pkgdatadir libzhuyin`
@@ -83,6 +83,11 @@ AC_PATH_PROG(ENV, env)
 AC_SUBST(ENV)
 
 # check python
+AC_ARG_WITH(python,
+    AS_HELP_STRING([--with-python[=PATH]],
+        [Select python2 or python3]),
+    [PYTHON=$with_python], []
+)
 AM_PATH_PYTHON([2.5])
 
 # --enable-boost
