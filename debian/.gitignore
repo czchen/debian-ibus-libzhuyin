@@ -1,0 +1,9 @@
+/*.debhelper
+/*.log
+/*.substvars
+/autoreconf.*
+/files
+
+/ibus-libzhuyin/
+/ibus-libzhuyin-dbg/
+/tmp
