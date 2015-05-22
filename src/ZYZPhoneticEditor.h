@@ -58,8 +58,8 @@ public:
     virtual void candidateClicked (guint index, guint button, guint state);
     virtual gboolean processKeyEvent (guint keyval, guint keycode, guint modifiers);
     virtual gboolean processEscape (guint keyval, guint keycode, guint modifiers);
-    virtual gboolean processEnter (guint keyval, guint keycode, guint modifiers);
-    virtual gboolean processSpace (guint keyval, guint keycode, guint modifiers);
+    virtual gboolean processCommit (guint keyval, guint keycode, guint modifiers);
+    virtual gboolean processSelectCandidate (guint keyval, guint keycode, guint modifiers);
     virtual gboolean processFunctionKey (guint keyval, guint keycode, guint modifiers);
     virtual gboolean processShowCandidateKey (guint keyval, guint keycode, guint modifiers);
     virtual gboolean processCandidateKey (guint keyval, guint keycode, guint modifiers);
@@ -84,7 +84,7 @@ protected:
     void commit (const gchar *str);
 
     /* pure virtual functions */
-    virtual gboolean insert (gint ch) = 0;
+    virtual gboolean insert (guint keyval, guint keycode, guint modifiers) = 0;
     virtual gboolean removeCharBefore (void);
     virtual gboolean removeCharAfter (void);
     virtual gboolean moveCursorLeft (void);
