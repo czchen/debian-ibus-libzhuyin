@@ -16,7 +16,7 @@ export V=1
 export NOCONFIGURE=yes # for ./autogen.sh
 
 %:
-	dh $@ --with autoreconf,python2
+	dh $@ --with autoreconf,python3
 
 override_dh_autoreconf:
 	# Upstream uses current timestamp as part of version string, so we need

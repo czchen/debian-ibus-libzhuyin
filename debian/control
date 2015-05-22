@@ -12,7 +12,7 @@ Build-Depends: debhelper (>= 9),
                libibus-1.0-dev (>= 1.4.0),
                libopencc-dev (>= 1.0.0),
                libzhuyin-dev (>= 1.0.0),
-               python-all,
+               python3,
 Standards-Version: 3.9.6
 Homepage: https://github.com/libzhuyin/ibus-libzhuyin
 Vcs-Git: git://anonscm.debian.org/pkg-ime/ibus-libzhuyin.git
