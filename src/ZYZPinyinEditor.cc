@@ -173,29 +173,35 @@ PinyinEditor::updatePreeditText (void)
 }
 
 gboolean
-PinyinEditor::insert (gint ch)
+PinyinEditor::insert (guint keyval, guint keycode, guint modifiers)
 {
-    if (IS_PINYIN (ch)) {
-        insert_phonetic (m_text, m_cursor++, ch);
+    /* let client applications to handle shortcut key event */
+    modifiers = cmshm_filter (modifiers);
+
+    if (modifiers != 0 && m_text.empty ())
+        return FALSE;
+
+    if (IS_PINYIN (keyval)) {
+        insert_phonetic (m_text, m_cursor++, keyval);
 
         updateZhuyin ();
         update ();
         return TRUE;
     }
 
-    if (insertPunct (ch)) {
+    if (insertPunct (keyval)) {
         updateZhuyin ();
         update ();
         return TRUE;
     }
 
-    if (insertEnglish (ch)) {
+    if (insertEnglish (keyval)) {
         updateZhuyin ();
         update ();
         return TRUE;
     }
 
-    if (insertNumbers (ch)) {
+    if (insertNumbers (keyval)) {
         updateZhuyin ();
         update ();
         return TRUE;
@@ -225,10 +231,10 @@ PinyinEditor::processKeyEvent (guint keyval, guint keycode, guint modifiers)
         if (processUserSymbolKey (keyval, keycode, modifiers))
             return TRUE;
 
-        if (insert (keyval))
+        if (insert (keyval, keycode, modifiers))
             return TRUE;
 
-        if (processEnter (keyval, keycode, modifiers))
+        if (processCommit (keyval, keycode, modifiers))
             return TRUE;
 
         if (processFunctionKey (keyval, keycode, modifiers))
@@ -244,7 +250,7 @@ PinyinEditor::processKeyEvent (guint keyval, guint keycode, guint modifiers)
         STATE_USER_SYMBOL_LIST_ALL == m_input_state ||
         STATE_USER_SYMBOL_SHOWN == m_input_state) {
 
-        if (processSpace (keyval, keycode, modifiers))
+        if (processSelectCandidate (keyval, keycode, modifiers))
             return TRUE;
 
         if (processCandidateKey (keyval, keycode, modifiers))
