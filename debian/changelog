@@ -1,3 +1,10 @@
+ibus-libzhuyin (1.7.2-1) experimental; urgency=medium
+
+  * New upstream release
+  * Migrate to Python3
+
+ -- ChangZhuo Chen (陳昌倬) <czchen@gmail.com>  Fri, 22 May 2015 23:48:46 +0800
+
 ibus-libzhuyin (1.7.1-1) experimental; urgency=medium
 
   * New upstream release
