@@ -1,5 +1,5 @@
 #!/usr/bin/make -f
-DH_VERBOSE = 1
+#DH_VERBOSE = 1
 
 DPKG_EXPORT_BUILDFLAGS = 1
 include /usr/share/dpkg/default.mk
